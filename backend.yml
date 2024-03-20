@@ -41,7 +41,7 @@
     - name: Copy Backend Service File
       ansible.builtin.copy:
         src: backend.service
-        path: /etc/systemd/system/backend.service
+        dest: /etc/systemd/system/backend.service
 
     - name: Install MySQL client
       ansible.builtin.dnf:
