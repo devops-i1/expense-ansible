@@ -6,7 +6,7 @@
       ansible.builtin.shell: dnf module disable nodejs -y
 
     - name: Enable default Nodejs version module V20
-      ansible.builtin.shell: dnf module disable nodejs
+      ansible.builtin.shell: dnf module disable nodejs -y
 
     - name: Install Nodejs
       ansible.builtin.dnf:
@@ -30,7 +30,7 @@
     - name: Download and Extract App content
       ansible.builtin.unarchive:
         src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
-        dest: /usr/share/nginx/html
+        dest: /app
         remote_src: yes
 
     - name: Download Nodejs dependencies
