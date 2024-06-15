@@ -43,21 +43,23 @@
         src: backend.service
         dest: /etc/systemd/system/backend.service
 
-    - name: Install MySQL client
+    - name: Install Python MySQL client
       ansible.builtin.dnf:
-        name: mysql
-        state: installed
+        name:
+          - PyMySQL
+          - cryptography
+        executable: pip3.9
 
-#    - name: Load Schema
-#      community.mysql.mysql_db:
-#        state: import
-#        name: all
-#        target: /app/schema/backend.sql
-#        login_user: root
-#        login_password: ExpenseApp@1
-#        login_host: mysql-dev.akhilsaidevops.online
-    - name: To load schema
-      ansible.builtin.shell: mysql -h mysql-dev.akhilsaidevops.online  -uroot -pExpenseApp@1 < /app/schema/backend.sql
+    - name: Load Schema
+      community.mysql.mysql_db:
+        state: import
+        name: all
+        target: /app/schema/backend.sql
+        login_user: root
+        login_password: ExpenseApp@1
+        login_host: mysql-dev.akhilsaidevops.online
+#    - name: To load schema
+#      ansible.builtin.shell: mysql -h mysql-dev.akhilsaidevops.online  -uroot -pExpenseApp@1 < /app/schema/backend.sql
 
     - name: Start Backend service
       ansible.builtin.systemd_service:
