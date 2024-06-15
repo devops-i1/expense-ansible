@@ -50,7 +50,6 @@
           - cryptography
         executable: pip3.11
 
-
     - name: Load Schema
       community.mysql.mysql_db:
         state: import
