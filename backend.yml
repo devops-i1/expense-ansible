@@ -44,7 +44,7 @@
         dest: /etc/systemd/system/backend.service
 
     - name: Install Python MySQL client
-      ansible.builtin.dnf:
+      ansible.builtin.pip:
         name:
           - PyMySQL
           - cryptography
