@@ -4,4 +4,4 @@
 - name: Import Node Exporter
   ansible.builtin.import_role:
     name: prometheus
-    tasks_from: node_exporter.service
+    tasks_from: node_exporter
