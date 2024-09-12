@@ -11,7 +11,7 @@
 
 - name: Adding application user
   ansible.builtin.user:
-    name: "{[app_user]}"
+    name: "{{app_user}}"
 
 - name: Import App Pre requisites
   ansible.builtin.import_role:
