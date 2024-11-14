@@ -10,7 +10,7 @@ pipelines:
         branch: main
     secure_variables:
       vault_token: AES:SwJnjN2xu5okR7QrKc6/6Q==:8fYPWT/nNBNEjm0So1OXTL9nXRM/dfSTdyGgTzj9pII=
-    environment-variables:
+    environment_variables:
       APP_VERSION: ""
     stages:
       - DEV:
