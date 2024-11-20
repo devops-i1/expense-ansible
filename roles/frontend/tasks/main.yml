@@ -1,25 +1,25 @@
-- name: Installing nginx
-  ansible.builtin.dnf:
-    name: nginx
-    state: latest
-
-- name: Copy expense nginx conf file
-  ansible.builtin.template:
-    src: expense.conf
-    dest: /etc/nginx/default.d/expense.conf
-
-- name: Import App Pre requisites
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: app-pre-req
-
-- name: Start Nginx
-  ansible.builtin.systemd_service:
-    state: restarted
-    name: nginx
-    enabled: yes
-
-- name: Import Newrelic Nginx Setup
-  ansible.builtin.import_role:
-    name: newrelic
-    tasks_from: nginx
+#- name: Installing nginx
+#  ansible.builtin.dnf:
+#    name: nginx
+#    state: latest
+#
+#- name: Copy expense nginx conf file
+#  ansible.builtin.template:
+#    src: expense.conf
+#    dest: /etc/nginx/default.d/expense.conf
+#
+#- name: Import App Pre requisites
+#  ansible.builtin.import_role:
+#    name: common
+#    tasks_from: app-pre-req
+#
+#- name: Start Nginx
+#  ansible.builtin.systemd_service:
+#    state: restarted
+#    name: nginx
+#    enabled: yes
+#
+#- name: Import Newrelic Nginx Setup
+#  ansible.builtin.import_role:
+#    name: newrelic
+#    tasks_from: nginx
